@@ -1,225 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abankwah Joseph - Creative Web Developer & Designer</title>
-  <meta name="description" content="Portfolio of Abankwah Joseph, Web Developer & Designer from Ghana. Specialized in modern web apps, UI/UX, graphic design, and photography.">
-  <meta property="og:title" content="Abankwah Joseph - Web Developer & Designer">
-  <meta property="og:description" content="Explore projects, skills, and services of Abankwah Joseph.">
-  <meta property="og:image" content="image/pro.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="image/favicon.png">
+  <title>Abankwah Joseph - Portfolio</title>
 
   <!-- Tailwind -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    body { font-family: 'Poppins', sans-serif; }
+
+    /* Fix blank PDF: move resume off-screen instead of display:none */
+    #portfolio-resume {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      width: 800px; /* fit A4 width */
+      background: #fff;
+      color: #000;
+      padding: 25px;
     }
 
-    /* PDF Styling */
-    #portfolio-resume.pdf-style {
-      display: block !important;
-      background: #fff !important;
-      color: #000 !important;
-      padding: 25px;
-      font-family: 'Poppins', sans-serif;
-    }
-    #portfolio-resume h1, 
-    #portfolio-resume h2, 
-    #portfolio-resume h3, 
-    #portfolio-resume p, 
-    #portfolio-resume li {
-      color: #000 !important;
-    }
     #portfolio-resume h2 {
       font-size: 20px;
       margin-bottom: 8px;
       border-bottom: 1px solid #000;
       padding-bottom: 3px;
     }
-    #portfolio-resume ul {
-      margin-left: 18px;
-    }
+
+    #portfolio-resume ul { margin-left: 18px; }
+    #portfolio-resume a { color: #0645AD; text-decoration: underline; }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-900 text-gray-100">
 
   <!-- HEADER -->
-  <header class="bg-gray-900 text-gray-100 py-4 px-6 md:px-12 fixed w-full z-50 shadow-lg">
-    <nav class="container mx-auto flex justify-between items-center">
+  <header class="bg-gray-900 py-4 px-6 fixed w-full z-50 shadow-lg">
+    <nav class="flex justify-between items-center">
       <a href="#home" class="text-2xl font-bold text-blue-500">ABANKWAH JOSEPH</a>
-      <ul class="hidden md:flex space-x-8">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#resume">RESUME</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#certifications">CERTIFICATIONS</a></li>
-        <li><a href="#testimonials">TESTIMONIALS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-      <button id="download-pdf" class="hidden md:block bg-blue-600 px-5 py-2 rounded-lg">Download CV</button>
+      <button id="download-pdf" class="bg-blue-600 px-5 py-2 rounded-lg">Download CV</button>
     </nav>
   </header>
 
-  <main class="flex-grow">
-
-    <!-- HERO -->
-    <section id="home" class="h-screen flex flex-col items-center justify-center text-center pt-20">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Hey! I'm Joseph<br><span class="text-blue-500">Web Developer & Designer</span></h1>
-      <p class="text-lg text-gray-300 mb-6">I craft creative, functional, and user-friendly digital solutions with strong design sense.</p>
-      <div class="flex justify-center space-x-6 text-3xl text-gray-400">
-        <a href="https://github.com/abankwah4543" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/abankwah-joseph" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.behance.net/" target="_blank"><i class="fab fa-behance"></i></a>
-      </div>
+  <main class="pt-20">
+    <!-- Hero -->
+    <section id="home" class="h-screen flex flex-col items-center justify-center text-center">
+      <h1 class="text-5xl font-extrabold mb-4">Hey! I'm Joseph <br><span class="text-blue-500">Web Developer & Designer</span></h1>
+      <p class="text-gray-300">I craft creative and functional digital solutions.</p>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-20 bg-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">About Me</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">I am a passionate Web Developer and Designer from Ghana, with a background in visual arts, design, and photography. 
-        I specialize in building functional, user-friendly digital solutions that blend creativity with technology.</p>
-      </div>
+    <!-- About -->
+    <section id="about" class="py-20 bg-gray-800 text-center">
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-gray-300 max-w-xl mx-auto">I am a Web Developer and Designer from Ghana, passionate about building user-friendly digital solutions.</p>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-20 bg-gray-900">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Services</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div class="bg-gray-800 p-6 rounded-xl">
-            <i class="fas fa-code text-5xl text-blue-400 mb-4"></i>
-            <h3 class="text-xl font-semibold">Web Development</h3>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-xl">
-            <i class="fas fa-paint-brush text-5xl text-blue-400 mb-4"></i>
-            <h3 class="text-xl font-semibold">UI/UX Design</h3>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-xl">
-            <i class="fas fa-palette text-5xl text-blue-400 mb-4"></i>
-            <h3 class="text-xl font-semibold">Graphic Design</h3>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-xl">
-            <i class="fas fa-camera text-5xl text-blue-400 mb-4"></i>
-            <h3 class="text-xl font-semibold">Photography</h3>
-          </div>
-        </div>
-      </div>
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-gray-900 text-center">
+      <h2 class="text-4xl font-bold mb-6">Skills</h2>
+      <ul class="text-gray-300 space-y-2">
+        <li>HTML, CSS, JS, React, PHP</li>
+        <li>UI/UX, Photoshop, Illustrator</li>
+        <li>Communication, Problem Solving</li>
+      </ul>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="py-20 bg-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
-        <ul class="text-gray-300 max-w-2xl mx-auto space-y-2">
-          <li><strong>Web Development:</strong> HTML, CSS (Tailwind), JavaScript, React, PHP</li>
-          <li><strong>Design:</strong> UI/UX, Graphic Design, Adobe Photoshop/Illustrator</li>
-          <li><strong>Soft Skills:</strong> Communication, Customer Relations, Problem Solving</li>
-        </ul>
-      </div>
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gray-800 text-center">
+      <h2 class="text-4xl font-bold mb-6">Services</h2>
+      <p class="text-gray-300">Web Development • UI/UX • Graphic Design • Photography</p>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="py-20 bg-gray-900 text-center">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-6">Resume Overview</h2>
-        <p class="text-gray-300">Click the button above to download a detailed PDF including all sections of my portfolio.</p>
-      </div>
+    <!-- Projects -->
+    <section id="projects" class="py-20 bg-gray-900 text-center">
+      <h2 class="text-4xl font-bold mb-6">Projects</h2>
+      <ul class="text-gray-300 space-y-2">
+        <li>E-commerce Marketplace – <a href="https://github.com/abankwah4543/ecommerce">GitHub Repo</a></li>
+        <li>NurseLink Booking App – <a href="https://github.com/abankwah4543/nurselink">GitHub Repo</a></li>
+        <li>VIP Courier Platform – <a href="https://github.com/abankwah4543/vip-courier">GitHub Repo</a></li>
+      </ul>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="py-20 bg-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Selected Projects</h2>
-        <ul class="text-gray-300 max-w-2xl mx-auto space-y-2">
-          <li><strong>E-commerce Marketplace</strong> – <a href="https://github.com/abankwah4543/ecommerce" class="text-blue-400">GitHub Repo</a></li>
-          <li><strong>NurseLink Booking App</strong> – <a href="https://github.com/abankwah4543/nurselink" class="text-blue-400">GitHub Repo</a></li>
-          <li><strong>VIP Courier Platform</strong> – <a href="https://github.com/abankwah4543/vip-courier" class="text-blue-400">GitHub Repo</a></li>
-        </ul>
-      </div>
+    <!-- Certifications -->
+    <section id="certifications" class="py-20 bg-gray-800 text-center">
+      <h2 class="text-4xl font-bold mb-6">Certifications</h2>
+      <ul class="text-gray-300 space-y-2">
+        <li>HND in Web Development – IPMC</li>
+        <li>UBO Certification</li>
+        <li>UI/UX Fundamentals – Udemy</li>
+      </ul>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="py-20 bg-gray-900 text-center">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-6">Certifications</h2>
-        <ul class="text-gray-300 space-y-2">
-          <li>HND in Computer Web Development – IPMC</li>
-          <li>Understanding Business Organizations (UBO)</li>
-          <li>UI/UX Fundamentals – Udemy</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="py-20 bg-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-12">Testimonials</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-900 p-6 rounded-xl">
-            <p class="italic text-gray-300">"Joseph built our e-commerce site with professionalism and creativity. Highly recommended!"</p>
-            <p class="mt-4 font-semibold">– Client A</p>
-          </div>
-          <div class="bg-gray-900 p-6 rounded-xl">
-            <p class="italic text-gray-300">"Amazing design sense and technical execution. Delivered on time and exceeded expectations."</p>
-            <p class="mt-4 font-semibold">– Client B</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 bg-gray-900">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-12">Contact Me</h2>
-        <p>Email: <a href="mailto:josephabankwah36@gmail.com" class="text-blue-400">josephabankwah36@gmail.com</a></p>
-        <p>Phone: <a href="tel:+233552150758" class="text-blue-400">+233 552150758</a></p>
-      </div>
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900 text-center">
+      <h2 class="text-4xl font-bold mb-6">Contact</h2>
+      <p>Email: <a href="mailto:josephabankwah36@gmail.com" class="text-blue-400">josephabankwah36@gmail.com</a></p>
+      <p>Phone: <a href="tel:+233552150758" class="text-blue-400">+233 552150758</a></p>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 py-6 text-center border-t border-gray-700">
-    <p class="text-gray-400">&copy; <span id="current-year"></span> Abankwah Joseph</p>
-  </footer>
-
-  <!-- HIDDEN FULL PORTFOLIO FOR PDF -->
-  <div id="portfolio-resume" class="hidden">
-    <div class="pdf-header text-center mb-6">
-      <h1 class="text-3xl font-bold">Abankwah Joseph</h1>
-      <p class="text-lg">Creative Web Developer & Designer</p>
-      <hr class="my-3 border-black">
+  <!-- HIDDEN PDF RESUME -->
+  <div id="portfolio-resume">
+    <div class="text-center">
+      <h1 class="text-2xl font-bold">Abankwah Joseph</h1>
+      <p>Creative Web Developer & Designer</p>
+      <hr>
     </div>
 
     <h2>About Me</h2>
     <p>I am a passionate Web Developer and Designer from Ghana...</p>
 
-    <h2>Education</h2>
-    <p>IPMC Technology University – HND in Web Development (2019 – Present)</p>
-    <p>Kwahu Ridge Senior High – Visual Arts (2015 – 2018)</p>
-
-    <h2>Experience</h2>
-    <p>Web Developer – Freelance (2022 – Present)</p>
-    <p>Sales Representative – Aduana Royals (2019 – 2025)</p>
-    <p>Photographer – Fotovillage (2019 – Present)</p>
-
     <h2>Skills</h2>
     <ul>
       <li>Web Development: HTML, CSS, JS, React, PHP</li>
       <li>Design: UI/UX, Photoshop, Illustrator</li>
-      <li>Soft Skills: Communication, Problem Solving</li>
     </ul>
 
     <h2>Services</h2>
@@ -230,7 +131,7 @@
       <li>Photography</li>
     </ul>
 
-    <h2>Selected Projects</h2>
+    <h2>Projects</h2>
     <ul>
       <li>E-commerce Marketplace – <a href="https://github.com/abankwah4543/ecommerce">GitHub Repo</a></li>
       <li>NurseLink Booking App – <a href="https://github.com/abankwah4543/nurselink">GitHub Repo</a></li>
@@ -244,44 +145,39 @@
       <li>UI/UX Fundamentals – Udemy</li>
     </ul>
 
-    <div class="pdf-footer text-center mt-6">
-      <hr class="my-3 border-black">
+    <div class="text-center mt-4">
+      <hr>
       <p>Email: josephabankwah36@gmail.com | Phone: +233 552150758</p>
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- PDF JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+  document.getElementById("download-pdf").addEventListener("click", () => {
+    const element = document.getElementById("portfolio-resume");
 
-    document.getElementById("download-pdf").addEventListener("click", () => {
-      const element = document.getElementById("portfolio-resume");
-      element.classList.add("pdf-style");
+    const options = {
+      margin: 0.5,
+      filename: 'Abankwah_Joseph_Portfolio.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, backgroundColor: "#ffffff" },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
 
-      const options = {
-        margin: 0.5,
-        filename: 'Abankwah_Joseph_Portfolio.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, backgroundColor: "#ffffff" },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-
-      html2pdf().set(options).from(element).toPdf().get('pdf').then((pdf) => {
-        const totalPages = pdf.internal.getNumberOfPages();
-        for (let i = 1; i <= totalPages; i++) {
-          pdf.setPage(i);
-          pdf.setFontSize(10);
-          pdf.text(
-            `Page ${i} of ${totalPages}`,
-            pdf.internal.pageSize.getWidth() - 60,
-            pdf.internal.pageSize.getHeight() - 10
-          );
-        }
-      }).save().then(() => {
-        element.classList.remove("pdf-style");
-      });
-    });
+    html2pdf().set(options).from(element).toPdf().get('pdf').then((pdf) => {
+      const totalPages = pdf.internal.getNumberOfPages();
+      for (let i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+        pdf.setFontSize(10);
+        pdf.text(
+          `Page ${i} of ${totalPages}`,
+          pdf.internal.pageSize.getWidth() - 60,
+          pdf.internal.pageSize.getHeight() - 10
+        );
+      }
+    }).save();
+  });
   </script>
 </body>
 </html>
